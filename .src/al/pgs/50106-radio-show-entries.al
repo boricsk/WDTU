@@ -11,23 +11,23 @@ page 50106 "Radio Show Entries"
         {
             repeater(group)
             {
-                field("Radio show no."; "Radio show no.") { ApplicationArea = Basic; }
+                field("Radio show no."; Rec."Radio show no.") { ApplicationArea = Basic; }
 
-                field(Description; Description) { ApplicationArea = Basic; }
+                field(Description; Rec.Description) { ApplicationArea = Basic; }
 
-                field(Duration; Duration) { ApplicationArea = Basic; }
+                field(Duration; Rec.Duration) { ApplicationArea = Basic; }
 
-                field(Date; Date) { ApplicationArea = Basic; }
+                field(Date; Rec.Date) { ApplicationArea = Basic; }
 
-                field(Time; Time) { ApplicationArea = Basic; }
+                field(Time; Rec.Time) { ApplicationArea = Basic; }
 
-                field("ACSAP ID"; "ACSAP ID") { ApplicationArea = Basic; }
+                field("ACSAP ID"; Rec."ACSAP ID") { ApplicationArea = Basic; }
 
-                field("Fee amount"; "Fee amount") { ApplicationArea = Basic; }
+                field("Fee amount"; Rec."Fee amount") { ApplicationArea = Basic; }
 
-                field("Publisher code"; "Publisher code") { ApplicationArea = Basic; }
+                field("Publisher code"; Rec."Publisher code") { ApplicationArea = Basic; }
 
-                field("Entry no."; "Entry no.") { ApplicationArea = Basic; }
+                field("Entry no."; Rec."Entry no.") { ApplicationArea = Basic; }
 
 
             }

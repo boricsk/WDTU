@@ -11,8 +11,8 @@ page 50102 "Radio Show Type"
         {
             repeater(Group)
             {
-                field(Code; Code) { ApplicationArea = Basic; }
-                field(Description; Description) { ApplicationArea = Basic; }
+                field(Code; Rec.Code) { ApplicationArea = Basic; }
+                field(Description; Rec.Description) { ApplicationArea = Basic; }
             }
         }
     }

@@ -11,19 +11,19 @@ page 50105 "Playlist Item Rate"
         {
             repeater(Group)
             {
-                field("Item no."; "Item no.") { ApplicationArea = Basic; }
+                field("Item no."; Rec."Item no.") { ApplicationArea = Basic; }
 
-                field("Publisher code"; "Publisher code") { ApplicationArea = Basic; }
+                field("Publisher code"; Rec."Publisher code") { ApplicationArea = Basic; }
 
-                field("Rate amount"; "Rate amount") { ApplicationArea = Basic; }
+                field("Rate amount"; Rec."Rate amount") { ApplicationArea = Basic; }
 
-                field("Source type"; "Source type") { ApplicationArea = Basic; }
+                field("Source type"; Rec."Source type") { ApplicationArea = Basic; }
 
-                field("Source no."; "Source no.") { ApplicationArea = Basic; }
+                field("Source no."; Rec."Source no.") { ApplicationArea = Basic; }
 
-                field("Start time"; "Start time") { ApplicationArea = Basic; }
+                field("Start time"; Rec."Start time") { ApplicationArea = Basic; }
 
-                field("End time"; "End time") { ApplicationArea = Basic; }
+                field("End time"; Rec."End time") { ApplicationArea = Basic; }
 
             }
         }

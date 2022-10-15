@@ -11,21 +11,21 @@ page 50107 "Listenership entries"
         {
             repeater(group)
             {
-                field("Radio show no."; "Radio show no.") { ApplicationArea = Basic; }
+                field("Radio show no."; Rec."Radio show no.") { ApplicationArea = Basic; }
 
-                field(Date; Date) { ApplicationArea = Basic; }
+                field(Date; Rec.Date) { ApplicationArea = Basic; }
 
-                field("Age demography"; "Age demography") { ApplicationArea = Basic; }
+                field("Age demography"; Rec."Age demography") { ApplicationArea = Basic; }
 
-                field("Ausience share"; "Ausience share") { ApplicationArea = Basic; }
+                field("Ausience share"; Rec."Ausience share") { ApplicationArea = Basic; }
 
-                field("Start time"; "Start time") { ApplicationArea = Basic; }
+                field("Start time"; Rec."Start time") { ApplicationArea = Basic; }
 
-                field("End time"; "End time") { ApplicationArea = Basic; }
+                field("End time"; Rec."End time") { ApplicationArea = Basic; }
 
-                field("Ratings source entry no."; "Ratings source entry no.") { ApplicationArea = Basic; }
+                field("Ratings source entry no."; Rec."Ratings source entry no.") { ApplicationArea = Basic; }
 
-                field("Entry no."; "Entry no.") { ApplicationArea = Basic; }
+                field("Entry no."; Rec."Entry no.") { ApplicationArea = Basic; }
 
             }
         }

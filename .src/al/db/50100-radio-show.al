@@ -114,13 +114,47 @@ table 50100 "Radio Show"
 
         field(60; "Host Name"; Text[50]) { }
 
-        field(100; "Average listeners"; Decimal) { }
+        field(100; "Average listeners"; Decimal)
+        {
+            // Statisztikai elemzéshez haszált mező. A hallgatók átlagos száma a minősítő ügynökség szerint.
+            // Editable = false;
+            // FieldClass = FlowField;
+            // CalcFormula = average("Listenership entry"."Listener count"
+            // where("Radio Show No." = field("No."), Date = field("Date filter"))); // A date filter a 1090 mező
+        }
 
-        field(110; "Audience Share"; Decimal) { }
+        field(110; "Audience Share"; Decimal)
+        {
+            // Statisztikai elemzéshez haszált mező. A hallgatók százalékos aránya időrésenként
+            // Editable = false;
+            // FieldClass = FlowField;
+            // CalcFormula = average("Listenership entry"."Audience share"
+            // where("Radio show no." = field("No."), Date = field("Date filter")));
+        }
 
-        field(120; "Adevertising Revenue"; Decimal) { }
+        field(120; "Adevertising Revenue"; Decimal)
+        {
+            // Statisztikai elemzéshez haszált mező. A hirdetési bevételek összege
+            // Editable = false;
+            // FieldClass = FlowField;
+            // CalcFormula = sum("Radio show entry"."Fee amount"
+            // where(
+            //     "Radio show no." = field("No."),
+            //     "Data format" = filter(Advertisement)
+            // ));
+        }
 
-        field(130; "Royality Cost"; Decimal) { }
+        field(130; "Royality Cost"; Decimal)
+        {
+            // Statisztikai elemzéshez haszált mező. A jogdíjjak összege
+            // Editable = false;
+            // FieldClass = FlowField;
+            // CalcFormula = sum("Radio show entry"."Fee amount"
+            // where(
+            //     "Radio show no." = field("No."),
+            //     "Data format" = filter()
+            // ))
+        }
 
         field(1000; "Frequency"; Option) { OptionMembers = Hourly,Daily,Weekly,Monthly; } // ezeket az opciókat lehet választani
 
@@ -140,7 +174,36 @@ table 50100 "Radio Show"
 
         field(1080; "Weather duration"; Duration) { }
 
-        field(1090; "Date filter"; Date) { FieldClass = FlowFilter; }
+        field(1090; "Date filter"; Date)
+        {
+            FieldClass = FlowFilter; // a fenti 4 mezőre számított adatok korlátozására szolgáló szűrő.
+            // FieldClass tulajdonság értékei
+            // Alap beállítás = No
+            // =FlowField,  azt jelenti, hogy nincs érték letárolva az adatbázisban, hanem futási időben kell azt kiszámolni. A számítást a CalcFormula-val kell definiálni.
+            //              Nagyon fontos sebesség szempontjából a megfelelő kulcs konfiguráció. Ha a flowfield mező oldalon van akkor az oldal létrehozásakor számolják ki.
+            //              Mivel értéket nem tartalmaz az ilyen mezőt nem lehet kulcsként felvenni.
+            //              Példa : CalcFormula = average("Listenership Entry"."Listener Count" where ("Radio Show No." = field("No.")));
+            //              A lehetséges módszerek : 
+            //              Sum             Adatok összegzése
+            //              Average         Adatok átlaga (összeg / sokok száma)
+            //              Exist           Logikai igaz / hamis attól függően, hogy létezik-e bejegyzés
+            //              Count           Bejegyzések száma
+            //              Min / Max       Min / Max értékek
+            //              Lookup          A megadott bejegyzés értéke
+            //              
+            //              A where lehetséges paraméterei:
+            //              const           Ez egy állandó az érték mezőben, azaz egy adott értékre lesz leszűrve a tábla, pl lehet vevő név.
+            //              filter          Az érték mező szűrésére használt kifejezés, amely alapján kell szűrni az adatbázist
+            //              field           Az a mező a táblán belül, ahol a flowfield van.
+            //              
+            //              Ha a megadott mező egy FlowFilter, és az OnlyMaxLimit paraméter igaz, akkor a FlowFilter tartományt a rendszer azon alapon
+            //              alkalmazza, hogy csak MaxLimit van, azaz True nincs alsó határ. Ez hasznos a mérlegadatok dátumszűrőinél. (Példát lásd:
+            //              31. mező – Egyenleg a dátumon a 15. táblázatban – Főkönyvi számla)
+            //
+            // = FlowFilter szabályozza a flowfield-ek számítását a táblában, ha a flowfilters szerepel a calcformula-ban. Nem tartalmaz állandő adatokat,
+            //              felhasználó specifikus szűrőket tartalmaz. Lehetővé teszi, hogy a user szülőrekord szintjén megadott szűrést alkalmazza a 
+            //              flowfield a számításkor, ezzel rugalmas adatkiválasztási funkciót adunk a usernek.
+        }
 
     }
     // kulcsok definiálása

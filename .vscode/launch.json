@@ -1,5 +1,5 @@
 {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "configurations": [
         {
             "name": "Microsoft cloud sandbox",
@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "sandbox",
-            "startupObjectId": 50100, // ezzel indul a BC
+            "startupObjectId": 22, // ezzel indul a BC
             "startupObjectType": "Page", // váltás a tábla vagy az oldal között
             "breakOnError": true,
             "launchBrowser": true,

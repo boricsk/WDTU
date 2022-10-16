@@ -1,5 +1,12 @@
 page 50100 "Radio Show List"
 {
+    //Az oldalak vezérlők, triggerek, műveletek és AL kódok kombinációjából állnak.
+    // Vezérlők / Controls          Ezek segítségével lehet megtekinteni illetve szerkeszteni az adatokat, parancsot kiválasztani és állapotot megjeleníteni.
+    // Beállítások / Properties     Az objektum attribútumai, jellemzői, ezek határozzák meg az állapotát, megjelenégét.
+    // Műveletek / Actions          Menüelemek, amelyek ikonok lehetnek.
+    // Eseményidítók / Triggers     Előre definiált függvények, amelyek egy adott esemény hatására futnak.
+
+
     PageType = List;
     SourceTable = "Radio Show"; // összekapcsolás az adatbázissal ezzel kap függőséget ez a tábla objetumtól
     ApplicationArea = All;
@@ -36,6 +43,9 @@ page 50100 "Radio Show List"
     }
 
 
+    trigger OnAfterGetCurrRecord()
+    begin
 
+    end;
 
 }

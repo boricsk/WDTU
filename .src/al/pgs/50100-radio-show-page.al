@@ -7,6 +7,16 @@ page 50100 "Radio Show List"
     // Eseményidítók / Triggers     Előre definiált függvények, amelyek egy adott esemény hatására futnak.
 
 
+    // A page tuljdonságai
+    //
+    //Caption és CaptionML          Oldalnév beállítása a nyelvi beállításoktól függően.
+    //Editable                      Ez határozza meg, hogy az oldalon levő vezérlők szerkeszthetőek-e (feltételezve, hogy az oldalhoz kapcsolt tábla is szerkeszthető)
+    //Description                   Belső dokumentáláshoz van.
+    //Permissions                   Felhasználói hozzásérés vezérlésére van. r = olvasás, i = beszúrás, m = módosítás és d = törlés. Meghatározásakor célszerű a végfelhasználói liszencel tesztelni.
+    //PageType                      Az oldal tipusát definiálja. Role Center, card, list, List Plus, Worksheet, Confirmation Dialog, Standard Dialog, Navigate page, Card Part, List Part.
+    //CardPageID                    Ez annak a kártyaoldalnak az azonosítója, amelyet akkor kell elindítani, ha a felhasználó duplán kattint egy bejegyzésre a listában. Ez csak a lista oldalakon használatos.
+    
+    
     PageType = List;
     SourceTable = "Radio Show"; // összekapcsolás az adatbázissal ezzel kap függőséget ez a tábla objetumtól
     ApplicationArea = All;
@@ -45,7 +55,7 @@ page 50100 "Radio Show List"
 
     trigger OnAfterGetCurrRecord()
     begin
-
+        // Fontos, hogy lehetőleg a page-eken belül a lehető legkevesebb AL kóddal dolgozzunk, inkább a táblaáblába tegyük őket.
     end;
 
 }

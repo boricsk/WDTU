@@ -117,31 +117,31 @@ table 50100 "Radio Show"
         field(100; "Average listeners"; Decimal)
         {
             // Statisztikai elemzéshez haszált mező. A hallgatók átlagos száma a minősítő ügynökség szerint.
-            // Editable = false;
-            // FieldClass = FlowField;
-            // CalcFormula = average("Listenership entry"."Listener count"
-            // where("Radio Show No." = field("No."), Date = field("Date filter"))); // A date filter a 1090 mező
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = average("Listenership entry"."Listener count"
+            where("Radio Show No." = field("No."), Date = FIELD("Date filter"))); // A date filter a 1090 mező
         }
 
         field(110; "Audience Share"; Decimal)
         {
             // Statisztikai elemzéshez haszált mező. A hallgatók százalékos aránya időrésenként
-            // Editable = false;
-            // FieldClass = FlowField;
-            // CalcFormula = average("Listenership entry"."Audience share"
-            // where("Radio show no." = field("No."), Date = field("Date filter")));
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = average("Listenership entry"."Ausience share"
+            where("Radio show no." = field("No."), Date = FIELD("Date filter")));
         }
 
         field(120; "Adevertising Revenue"; Decimal)
         {
             // Statisztikai elemzéshez haszált mező. A hirdetési bevételek összege
-            // Editable = false;
-            // FieldClass = FlowField;
-            // CalcFormula = sum("Radio show entry"."Fee amount"
-            // where(
-            //     "Radio show no." = field("No."),
-            //     "Data format" = filter(Advertisement)
-            // ));
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = sum("Radio show entry"."Fee amount"
+            where(
+                 "Radio show no." = field("No."),
+                 "Data format" = filter(Advertisement)
+             ));
         }
 
         field(130; "Royality Cost"; Decimal)

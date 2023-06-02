@@ -21,7 +21,7 @@ table 50102 "Playlist header"
 
     keys
     {
-
+        key(PK; "No.") { }
     }
 
     var

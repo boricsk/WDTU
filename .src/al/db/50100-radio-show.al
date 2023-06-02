@@ -209,8 +209,8 @@ table 50100 "Radio Show"
     // kulcsok definiálása
     keys
     {
-        // key(PK; "No.", "Radio Show Type")
-        //{
+        key(PK; "No.", "Radio Show Type") { }
+
         // a kulcsok beállításait itt lehet megadni
         // MaintainSQLIndex és MaintainSIFTIndex tulajdonságok lehetővé teszik annak meghatározását, hogy egy adott kulcs vagy SumIndexFieldTechnology (SIFT ez a flowfield alapja)
         // folyamatosan karbantarandó-e vagy csak szükség esetén hozza létre újra. A karbantartott indexek minimalzálják a rekordfrissítési idők, de hosszabb
